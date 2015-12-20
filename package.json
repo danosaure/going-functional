@@ -1,0 +1,23 @@
+{
+  "name": "going-functional",
+  "version": "0.0.1",
+  "description": "Tutorial to go functional",
+  "scripts": {
+    "test": "istanbul cover --root solutions -x test-helpers.js -x '*.spec.js' _mocha -- 'solutions/**/*.spec.js'",
+    "test:es6": "babel-node node_modules/.bin/_mocha solutions/12-es6/*.spec.es6.js",
+    "transpileES6": "babel solutions/12-es6 --out-dir solutions/12-es6-transpiled --source-maps inline",
+    "postinstall": "npm run transpileES6"
+  },
+  "devDependencies": {
+    "babel": "^6.3.13",
+    "babel-cli": "^6.3.17",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "chai": "^3.4.1",
+    "dirty-chai": "^1.2.2",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
+  }
+}
